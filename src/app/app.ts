@@ -9,6 +9,7 @@ import { MatFormField } from '@angular/material/form-field';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
+
 export class App {
   protected readonly title = signal('smartpowerenergy');
 }
