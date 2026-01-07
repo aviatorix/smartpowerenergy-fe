@@ -1,0 +1,244 @@
+
+ /* --- Pulsanti --- */
+ .btn {
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary {
+  background-color: #00c853; /* Verde brillante */
+  color: white;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* --- Layout Sezioni --- */
+.section {
+  padding: 80px 5%;
+}
+
+/* --- Header --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: absolute;
+  width: 90%;
+  z-index: 10;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 600;
+}
+
+/* --- 1. Hero Section --- */
+/*.hero {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1509390444345-16b0a273f87a?q=80&w=2070&auto=format&fit=crop' );
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}*/
+
+.hero {
+  height: 100vh;
+  position: relative; // Contenitore di riferimento per gli elementi interni posizionati in modo assoluto.
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; // Colore di default per tutto il testo all'interno.
+  overflow: hidden; // Impedisce al video di "sbordare" se le sue dimensioni non sono perfette.
+
+  // Livello 1: Il video di sfondo
+  #background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1; // Livello più basso.
+  }
+
+  // Livello 2: L'overlay semitrasparente
+  // Questo elemento deve essere aggiunto nel tuo HTML
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); // Scurisce il video per aumentare il contrasto.
+    z-index: 2; // Si posiziona sopra il video.
+  }
+
+  // Livello 3: Il contenuto testuale
+  // Raggruppa h1, p, e il pulsante in un div per gestirli come un unico blocco.
+  .hero-content {
+    position: relative; // o `absolute` se necessario, ma `relative` è più sicuro.
+    z-index: 3; // Si posiziona sopra l'overlay, rendendolo visibile.
+    padding: 20px; // Aggiunge un po' di spazio interno.
+    .hero-text {
+      /* 1. Abilita Flexbox */
+      display: flex;
+
+      /* 2. Allinea gli elementi in colonna (uno sotto l'altro) */
+      flex-direction: column;
+
+      /* 3. Centra verticalmente */
+      justify-content: center;
+
+      /* 4. Centra orizzontalmente */
+      align-items: center;
+
+      /* 5. Assicura che il contenitore occupi tutto lo spazio disponibile */
+      height: 100%;
+      width: 100%;
+
+      /* 6. Centra il testo all'interno degli elementi stessi (utile per i paragrafi) */
+      text-align: center;
+    }
+  }
+
+  // Stili specifici per gli elementi di testo
+  h1 {
+    color: white; // Assicura che il titolo sia bianco.
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+}
+
+
+/* --- 2. Sezione Servizi --- */
+#servizi {
+  background-color: #ffffff;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.service-card {
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+}
+.service-card .icon {
+  font-size: 3rem;
+  color: #0d2c4a; /* Blu scuro */
+  margin-bottom: 20px;
+}
+.service-card h3 {
+  margin-bottom: 15px;
+}
+
+/* --- 3. Sezione Contatti (Modulo) --- */
+#contatti {
+  background-color: #0d2c4a; /* Blu scuro */
+  color: white;
+}
+#contatti h2 {
+  color: white;
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.form-group .btn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+.contact-form {
+  // Buona pratica: imposta una larghezza massima per evitare che il form
+  // si allarghi troppo su schermi grandi.
+  max-width: 500px;
+  margin: 0 auto; // Centra il blocco del form.
+
+  // Grazie a SCSS, possiamo annidare gli stili per gli elementi interni.
+  .form-group {
+    // Applica questo stile a tutti gli elementi <input> e <button>
+    // che sono figli diretti o indiretti di .form-group.
+    // L'uso di `>` è opzionale ma può rendere il selettore più specifico.
+    > input,
+    > button {
+      // Regola chiave: forza entrambi gli elementi a occupare
+      // tutta la larghezza disponibile del loro contenitore.
+      width: 100%;
+
+      // Regola di sicurezza: assicura che padding e bordi siano
+      // inclusi nella larghezza totale (width: 100%), prevenendo
+      // problemi di allineamento e overflow.
+      box-sizing: border-box;
+    }
+
+    // Se vuoi dare uno stile specifico solo al bottone, puoi farlo qui.
+    // Ad esempio, potresti voler cambiare il padding o l'altezza.
+    > button {
+      // Esempio: Aumentiamo leggermente il padding verticale del bottone
+      // per renderlo più "cliccabile", senza rompere l'allineamento.
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+}
