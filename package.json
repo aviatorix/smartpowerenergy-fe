@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "node": "ng serve",
-    "start": "serve -s dist/smartpowerenergy -l $PORT",
+    "start": "serve -s dist/smartpowerenergy/browser -l $PORT",
     "build": "ng build",
     "heroku-postbuild": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
