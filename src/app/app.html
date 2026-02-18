@@ -11,22 +11,22 @@
 <section class="hero" id="home">
 
   <!-- Livello 1: Video -->
- <!-- <video playsinline autoplay muted loop id="background-video">
-    <source src="https://drive.google.com/file/d/1RUX0uOCe2QVa4H4YahgGtCl6rrtBXEuk/view?usp=sharing"
-      type="video/mp4">
-    Il tuo browser non supporta i video HTML5.
-  </video>-->
+  <!--<video
+  #bgVideo
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  (canplay)="bgVideo.play()"
+  (ended)="bgVideo.play()"
+  id="background-video">
+  <source src="video/video-header.mp4" type="video/mp4">
+</video>-->
 
- <!-- <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
-    <source src="assets/video/video-header.mp4" type="video/mp4">
-    Il tuo browser non supporta i video HTML5.
-  </video>-->
-
-  <!-- Livello 1: Video -->
-  <video loop muted autoplay playsinline muted loop id="background-video">
-    <source src="video/video-header.mp4" type="video/mp4">
-    Il tuo browser non supporta i video HTML5.
-  </video>
+<video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" id="background-video">
+  <source src="video/video-header.mp4" type="video/mp4">
+</video>
 
   <!-- Livello 3: Contenuto testuale -->
   <div class="hero-content">
