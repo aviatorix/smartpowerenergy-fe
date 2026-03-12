@@ -1,3 +1,7 @@
+/**/
+@import './palette_media.scss';
+
+
 /* You can add global styles to this file, and also import other style files */
 body, html {
   margin: 0;
@@ -30,4 +34,43 @@ footer {
   background-color: #e9ecef;
 }
 
+/** --- Sezione Hero --- */
+.flex33 {
+  width: 33%;
 
+  @include sm {
+      width: 100%;
+  }
+
+  @include md {
+      width: 100%;
+  }
+}
+
+.flex50 {
+  width: 45%;
+
+  @include sm {
+      width: 100%;
+  }
+
+  @include md {
+      width: 100%;
+  }
+}
+
+.flex49 {
+width: 49%;
+
+@include sm {
+    width: 100%;
+}
+
+@include md {
+    width: 100%;
+}
+}
+
+.flex100 {
+width: 100%;
+}

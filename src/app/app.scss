@@ -240,5 +240,20 @@ nav a {
       padding-top: 16px;
       padding-bottom: 16px;
     }
+
+    textarea {
+      width: 100%;
+      padding: 12px 15px; /* Regola il padding per abbinarlo agli input */
+      border: 1px solid #ccc; /* Assicurati che il bordo sia coerente */
+      border-radius: 8px; /* Raggio del bordo per angoli arrotondati */
+      box-sizing: border-box; /* Include padding e bordo nella larghezza e altezza totale */
+      font-family: inherit; /* Usa lo stesso font degli altri input */
+      font-size: 16px; /* Regola la dimensione del font se necessario */
+      line-height: 1.5; /* Altezza della linea per il testo */
+      min-height: 100px; /* Altezza minima, puoi regolarla */
+      resize: vertical; /* Permette il ridimensionamento solo verticale, se desiderato */
+      resize: none;
+    }
+
   }
 }

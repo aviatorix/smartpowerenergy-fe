@@ -65,20 +65,65 @@
         una soluzione su misura, senza impegno.</p>
     </div>
     <div class="contact-form">
-      <form>
+
+      <form [formGroup]="form" (submit)="sendEmail(form.value)">
+
         <div class="form-group">
-          <input matInput type="text" placeholder="Il tuo nome" required>
+
+          <input matInput placeholder="Il tuo nome" formControlName="name" required>
+
+          <mat-error *ngIf="form.get('name').invalid">Inserire il nome</mat-error>
+
         </div>
-        <div class="form-group">
-          <input matInput type="email" placeholder="La tua email" required>
+
+        <div appearance="outline" class="form-group">
+
+          <input matInput placeholder="Il tuo cognome" formControlName="surname">
+
+          <mat-error *ngIf="form.get('surname').invalid">Inserire il cognome</mat-error>
+
         </div>
-        <div class="form-group">
-          <input matInput type="tel" placeholder="Il tuo telefono">
+
+        <div appearance="outline" class="form-group">
+
+          <input matInput placeholder="La tua email" formControlName="email" type="email">
+
+          <mat-error *ngIf="form.get('email').invalid">Inserire l'e-mail</mat-error>
+          <mat-error *ngIf="form.get('email').errors && form.get('email').errors['pattern']">Attenzione: l'indirirzzo
+            e-mail inserito non è corretto</mat-error>
+
         </div>
+
+        <div appearance="outline" class="form-group">
+
+          <input matInput placeholder="il tuo telefono" formControlName="phone" type="tel">
+
+          <mat-error *ngIf="form.get('phone').errors && form.get('phone').errors['pattern']">Attenzione: il numero
+            inserito non è corretto</mat-error>
+
+        </div>
+
+        <div appearance="outline" class="form-group">
+
+          <textarea matInput placeholder="Inserire il messaggio" formControlName="message" rows="5"></textarea>
+
+          <mat-error *ngIf="form.get('message').invalid">Il messagio non può essere vuoto</mat-error>
+
+        </div>
+
+        <!--<re-captcha formControlName="recaptcha" [siteKey]="SITEKEY"></re-captcha>-->
+
         <div class="form-group">
           <button matButton type="submit" class="btn btn-primary">INVIA LA TUA RICHIESTA</button>
         </div>
+
+        <!--<mat-progress-spinner mode="indeterminate" diameter="50" *ngIf="loadingContact"></mat-progress-spinner>
+
+        <p *ngIf="error" class="mat-error text-center error-text" [innerHTML]="error"></p>-->
+
       </form>
+
+
     </div>
   </div>
 </section>

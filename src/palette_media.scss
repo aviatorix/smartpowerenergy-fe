@@ -1,0 +1,68 @@
+/* Colors */
+
+$darkgrey: #373737;
+$darkblue: #191d27;
+$lightgrey: #cccccc;
+$firstcolor: #00008F;
+$tabcolor: #f4f4f4;
+$background-color: #fafafa;
+$red: #d7071b;
+$dark-grey-visit: #bfbfbf;
+$xtra-dark-grey: #242526;
+$xtra-dark-grey-2: #212121;
+$light-grey-visit: #ebebeb;
+$white: #fff;
+$sm-xtra-light-grey: #d6d6d6;
+$brown: #a08763;
+$grey: #666666;
+$lightblack: #191919;
+$light-grey: #ebebeb;
+$container-max-width: 1920px;
+
+/**/
+
+///////////
+// MEDIA //
+///////////
+
+@mixin xss {
+    @media only screen and (max-width: 280px) {
+        @content;
+    }
+}
+
+@mixin xssm {
+    @media only screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin xsm {
+    @media only screen and (min-width: 321px) and (max-width: 420px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media only screen and (max-width: 540px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media only screen and (min-width: 541px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media only screen and (min-width: 800px) and (max-width: 924px) {
+        @content;
+    }
+}
+
+@mixin xlg {
+  @media only screen and (min-width: 767px) and (max-width: 1080px) {
+      @content;
+  }
+}
